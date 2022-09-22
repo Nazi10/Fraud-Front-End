@@ -1,0 +1,40 @@
+<div>
+
+</div>
+<app-calculate >
+
+</app-calculate>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<hr>
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
+          <div class="table-responsive">
+            <table class="table user-list">
+              <thead class="sort" data-sort="productName">
+              <tr>
+                <th class="align-left">Risk Points</th>
+                <th class="text-center">Fraud Status</th>
+                <th>&nbsp;</th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let validation of validations">
+              <tr>
+                <td>
+                  <a class="user-list">{{validation.riskPoints}} </a>
+                </td>
+                <td class="text-center">
+                  <a> {{validation.status}}</a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,122 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<hr>
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <form class="form-inline my-2 my-lg-0">
+      <input type="search" (ngModelChange)="searchClients(key.value)" #key="ngModel" ngModel
+             name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search clients..." required>
+      <i class="fa-solid fa-search"></i>
+    </form>
+    <div class="col-lg-12">
+      <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
+          <div class="table-responsive">
+            <table class="table user-list">
+              <thead class="sort" data-sort="productName">
+              <tr>
+                <th class="align-left">First</th>
+                <th class="text-center">Last</th>
+                <th class="text-center"><span>Age</span></th>
+                <th class="text-center"><span>Gender</span></th>
+                <th class="text-center"><span>Street</span></th>
+                <th class="text-center"><span>IP Address</span></th>
+                <th class="text-center"><span>Number</span></th>
+                <th class="text-center"><span>Email</span></th>
+                <th class="text-center"><span>Education Level</span></th>
+                <th class="text-center"><span>Marital Status</span></th>
+                <th class="text-center"><span>Income Category</span></th>
+                <th class="text-center"><span>Device ID</span></th>
+                <th class="text-center"><span>Bank Hash</span></th>
+                <th class="text-center"><span>Months Inactive</span></th>
+                <th class="text-center"><span>Credit Limit</span></th>
+                <th class="text-center"><span>Card Type</span></th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let client of clients">
+              <tr>
+                <td class="align-left">
+                  <a class="user-list">{{client.first}} </a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.last}}</a>
+                </td>
+                <td class="text-center">
+                  <span class="label label-default">{{client.clientAge}}</span>
+                </td>
+                <td class="text-center">
+                  <a> {{client.gender}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.street}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.ipAddress}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.number}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.email}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.educationLevel}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.maritalStatus}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.incomeCategory}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.deviceId}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.bankHash}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.monthsInactive}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.creditLimit}}</a>
+                </td>
+                <td class="text-center">
+                  <a> {{client.cardType}}</a>
+                </td>
+                <td style="width: 20%;">
+
+                  <a (click)="onOpenModal(client, 'delete')" class="table-link danger" data-placement="top"
+                     data-original-title="Delete"><span class="fa-stack"  type="button">
+                                                <i class="fa fa-square fa-stack" style="width: 171px"></i>
+                                                <i class="fa fa-trash-can fa-stack-1x fa-inverse" style="width: 171px"></i>
+                                            </span></a>
+                  <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog"
+                       aria-labelledby="deleteModelLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="deleteModelLabel">Delete {{deleteClient.first}}?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Are you sure you want to delete product?</p>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                            <button (click)="onDeleteClient(deleteClient.clientId)" class="btn btn-danger"
+                                    data-dismiss="modal">Yes
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
